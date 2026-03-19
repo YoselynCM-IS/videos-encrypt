@@ -47,6 +47,8 @@ class VideoController extends Controller
             'playlistUrl' => $playlistUrl
         ]);
 
+        if($access->role == 'admin') return redirect()->route('accesos.index');
+        
         return redirect()->route('video.player');
     }
 
